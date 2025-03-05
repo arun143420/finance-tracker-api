@@ -22,7 +22,7 @@ A RESTful API for managing financial transactions with filtering capabilities an
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/arun143420/finance-tracker-api
 cd finance-tracker-api
 ```
 
@@ -234,15 +234,3 @@ finance-tracker-api/
 ├── package.json
 └── README.md
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
-
-## License
-
-ISC 
