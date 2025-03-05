@@ -56,13 +56,6 @@ export const transactionSchema = Joi.object({
     .messages(messages.description)
 });
 
-// Query parameters schema
-export const transactionQuerySchema = Joi.object({
-  type: Joi.string().valid('income', 'expense').messages(messages.type),
-  from: Joi.date().iso().max('now').messages(messages.date),
-  to: Joi.date().iso().min(Joi.ref('from')).max('now').messages(messages.date),
-  category: Joi.string().min(2).max(50).trim().messages(messages.category)
-}).with('to', 'from');
 
 // Validation function with custom error handling
 export const validateTransaction = (data) => {

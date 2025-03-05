@@ -1,7 +1,7 @@
 import logger from '../config/logger.js';
 
+//log request details when request is made
 export const requestLogger = (req, res, next) => {
-  // Capture request start time
   const start = Date.now();
 
   // Log when response finishes

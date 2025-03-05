@@ -1,5 +1,5 @@
 /**
- * Simple logger utility
+ * Simple logger utility to print logs to the console with different levels
  */
 const LOG_LEVEL = process.env.LOG_LEVEL || 'info';
 
@@ -31,6 +31,16 @@ export const logger = {
     if (LOG_LEVEL === 'debug') {
       console.log(`[DEBUG] ${message}`);
       if (Object.keys(data).length > 0) {
+        // In debug mode, include stack trace if available
+        if (data.error?.stack) {
+          console.log('Stack Trace:');
+          console.log(data.error.stack);
+        }
+        // Remove stack from the data object to avoid duplication
+        if (data.error) {
+          const { stack, ...rest } = data.error;
+          data.error = rest;
+        }
         console.log(JSON.stringify(data, null, 2));
       }
     }

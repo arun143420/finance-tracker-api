@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import transactionRoutes from './routes/transactionRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
-import { requestLogger } from './middleware/logger.js';
+import { requestLogger } from './middleware/requestLogger.js';
 import logger from './config/logger.js';
 import { runSeeders } from './seeders/index.js';
 

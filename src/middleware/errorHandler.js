@@ -30,7 +30,7 @@ export const errorHandler = (err, req, res, next) => {
     return res.status(400).json({
       status: 'error',
       message: 'Validation Error',
-      errors: err.details.map(detail => detail.message)
+      errors: err.details.map(detail => detail?.message)
     });
   }
 
@@ -38,7 +38,7 @@ export const errorHandler = (err, req, res, next) => {
   if (err instanceof AppError) {
     return res.status(err.statusCode).json({
       status: 'error',
-      message: err.message
+      message: err?.message
     });
   }
 
