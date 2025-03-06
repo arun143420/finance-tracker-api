@@ -25,7 +25,7 @@ app.use('/api/transactions', transactionRoutes);
 app.use(errorHandler);
 
 // Log application startup
-let PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 4000;
 if (!process.env.PORT) {
     logger.info(`PORT not defined in env file using default one ${PORT}`);
 } else {
