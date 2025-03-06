@@ -5,7 +5,7 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Define log format
+// Define log format using winston; it is a format that is used to log the request details
 const logFormat = winston.format.combine(
   winston.format.timestamp(),
   winston.format.errors({ stack: false }),
@@ -18,7 +18,7 @@ const logFormat = winston.format.combine(
   })
 );
 
-// Create the logger
+// logging the logs in to console and file, error.log and combined.log
 const logger = winston.createLogger({
   level: process.env.LOG_LEVEL || 'info',
   format: logFormat,

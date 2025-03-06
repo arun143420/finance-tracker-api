@@ -1,6 +1,9 @@
 import logger from '../config/logger.js';
 
-//log request details when request is made
+/*
+ * - Log request details when request is made and log when response finishes
+ * - Use winston logger to log the request details
+ */
 export const requestLogger = (req, res, next) => {
   const start = Date.now();
 

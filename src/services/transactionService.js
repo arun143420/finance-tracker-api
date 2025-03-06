@@ -22,6 +22,7 @@ export const transactionService = {
   createTransaction: async (transactionData) => {
     try {
       // Validate and transform the data
+      console.log(transactionData);
       const validatedData = validateTransaction(transactionData);
       
       // Insert the validated data
